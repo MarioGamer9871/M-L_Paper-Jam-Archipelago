@@ -1,7 +1,6 @@
 TODO:
 
--Bizhawk Client\
--Block tracking
+-Item and Coin Removal
 
 -Party flags\
 -Paper Mario Item
