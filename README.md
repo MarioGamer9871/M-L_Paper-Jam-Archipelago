@@ -7,3 +7,5 @@ TODO:
 -Paper Mario Item
 
 -Remove paper mario story flag
+
+-Remove intro if possible
