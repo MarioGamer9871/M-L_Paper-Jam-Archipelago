@@ -42,6 +42,7 @@ ITEM_ID = {
     "Refreshing Herb": 29,
     "Boo Biscuit": 30,
 
+    #Beans
     "Heart Bean": 31,
     "Bros. Bean": 32,
     "Power Bean": 33,
@@ -56,8 +57,12 @@ ITEM_ID = {
     "Speed Bean DX": 41,
     "Stache Bean DX": 42,
 
-    #Test
-    "Test Progression": 100,
+    #Field Moves
+    "Dash Socks": 300,
+    "Progressive Hammers": 301,
+    "Trio Grab": 302,
+    "Trio Drill": 303,
+    "Trio Plane": 304,
 }
 
 ITEM_CLASS = {
@@ -110,8 +115,12 @@ ITEM_CLASS = {
     "Speed Bean DX": ItemClassification.filler,
     "Stache Bean DX": ItemClassification.filler,
 
-    #Test
-    "Test Progression": ItemClassification.progression,
+    #Field Moves
+    "Dash Socks": ItemClassification.progression,
+    "Progressive Hammers": ItemClassification.progression,
+    "Trio Grab": ItemClassification.progression,
+    "Trio Drill": ItemClassification.progression,
+    "Trio Plane": ItemClassification.progression,
 }
 
 class PJItem (Item):
@@ -132,7 +141,12 @@ def create_item_with_correct_classification(world, name: str) -> PJItem:
 
 def create_all_items(world: PJWorld) -> None:
     itempool: list[Item] = [
-        world.create_item("Test Progression"),
+        world.create_item("Dash Socks"),
+        world.create_item("Progressive Hammers"),
+        world.create_item("Progressive Hammers"),
+        world.create_item("Trio Grab"),
+        world.create_item("Trio Drill"),
+        world.create_item("Trio Plane"),
     ]
 
     number_of_items = len(itempool)

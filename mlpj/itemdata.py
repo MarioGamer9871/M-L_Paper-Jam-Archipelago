@@ -68,3 +68,31 @@ COUNTERS: dict[int, tuple[int, int]] = {
 }
 if COIN_COUNTER is not None:
     COUNTERS[COINS["Coin"]] = COIN_COUNTER
+
+# ---- Receiving items from Archipelago ----
+
+# Coins an AP coin item is worth. They go into the coin counter (item ID 1 in COUNTERS).
+COIN_AMOUNTS = {
+    "Coin": 1,
+    "5 Coin": 5,
+    "10 Coin": 10,
+    "50 Coin": 50,
+    "100 Coin": 100,
+}
+
+# What each received AP item does: AP item ID -> (counter item ID, amount to add).
+# Inventory items add 1 of themselves; coin items add coins to the coin counter.
+# Items not in here (e.g. "Test Progression") are received but don't touch the inventory.
+GRANTS: dict[int, tuple[int, int]] = {
+    **{item_id: (item_id, 1) for item_id, _address in ITEMS.values()},
+    **{COINS[name]: (COINS["Coin"], amount) for name, amount in COIN_AMOUNTS.items()},
+}
+
+# Highest value a counter may reach when the client gives you something.
+# ASSUMED values, check them against the game: anything over the cap is dropped.
+MAX_ITEM_COUNT = 99
+MAX_COIN_COUNT = 9_999_999
+
+COUNTER_CAPS: dict[int, int] = {item_id: MAX_ITEM_COUNT for item_id in COUNTERS}
+if COIN_COUNTER is not None:
+    COUNTER_CAPS[COINS["Coin"]] = MAX_COIN_COUNT
