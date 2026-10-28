@@ -1,4 +1,4 @@
-SETUP INSTRUCTIONS:\
+SETUP INSTRUCTIONS:
 1. Download "mlpj.apworld" and install it to archipelago
 2. Export a yaml using the Options Creator in Archipelago, and place it in the players folder
 3. Generate a game
