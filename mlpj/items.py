@@ -42,6 +42,20 @@ ITEM_ID = {
     "Refreshing Herb": 29,
     "Boo Biscuit": 30,
 
+    "Heart Bean": 31,
+    "Bros. Bean": 32,
+    "Power Bean": 33,
+    "Defense Bean": 34,
+    "Speed Bean": 35,
+    "Stache Bean": 36,
+
+    "Heart Bean DX": 37,
+    "Bros. Bean DX": 38,
+    "Power Bean DX": 39,
+    "Defense Bean DX": 40,
+    "Speed Bean DX": 41,
+    "Stache Bean DX": 42,
+
     #Test
     "Test Progression": 100,
 }
@@ -82,6 +96,20 @@ ITEM_CLASS = {
     "Refreshing Herb": ItemClassification.filler,
     "Boo Biscuit": ItemClassification.filler,
 
+    "Heart Bean": ItemClassification.filler,
+    "Bros. Bean": ItemClassification.filler,
+    "Power Bean": ItemClassification.filler,
+    "Defense Bean": ItemClassification.filler,
+    "Speed Bean": ItemClassification.filler,
+    "Stache Bean": ItemClassification.filler,
+
+    "Heart Bean DX": ItemClassification.filler,
+    "Bros. Bean DX": ItemClassification.filler,
+    "Power Bean DX": ItemClassification.filler,
+    "Defense Bean DX": ItemClassification.filler,
+    "Speed Bean DX": ItemClassification.filler,
+    "Stache Bean DX": ItemClassification.filler,
+
     #Test
     "Test Progression": ItemClassification.progression,
 }
@@ -89,9 +117,8 @@ ITEM_CLASS = {
 class PJItem (Item):
     game = "Mario & Luigi: Paper Jam"
 
-#Set a random filler item (ask claude)
 def get_random_filler_item_name(world: PJWorld):
-    return "Coin"
+    return world.random.choice([name for name, classification in ITEM_CLASS.items() if classification == ItemClassification.filler])
 
 def create_item_with_correct_classification(world, name: str) -> PJItem:
     classification = ITEM_CLASS[name]
