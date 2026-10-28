@@ -1,9 +1,9 @@
 TODO:
 
--Item and Coin Removal
+-Item Recieving
 
--Party flags\
--Paper Mario Item
+-Add Field Moves Items\
+-Field Move Recieving
 
 -Remove paper mario story flag
 
